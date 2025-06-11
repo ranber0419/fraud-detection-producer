@@ -1,0 +1,27 @@
+server:
+  port: 9999
+  servlet:
+    # 应用的访问路径
+    context-path:
+# 日志配置
+logging:
+  level:
+    com.wlhy: debug
+    org.springframework: warn
+    com:
+      zaxxer:
+        hikari: DEBUG
+    org.apache.kafka: DEBUG
+    org.springframework.kafka: DEBUG
+
+# Kafka配置
+aliyun:
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:alikafka-serverless-cn-zp54ajv8a02-1000.alikafka.aliyuncs.com:9093,alikafka-serverless-cn-zp54ajv8a02-2000.alikafka.aliyuncs.com:9093,alikafka-serverless-cn-zp54ajv8a02-3000.alikafka.aliyuncs.com:9093}
+    username: ${KAFKA_USERNAME:alikafka_serverless-cn-zp54ajv8a02}
+    password: ${KAFKA_PASSWORD:s1HVAy3UMxBzBOO3Hng3pZnmxHikTqcY}
+    security-protocol: ${KAFKA_SECURITY_PROTOCOL:SASL_SSL}
+    sasl-mechanism: ${KAFKA_SASL_MECHANISM:PLAIN}
+    ssl-location: ${SSL-LOCATION:C:\\code\\git\\gitee\\gitee-yxz\\fraud-detection-producer\\src\\main\\truststore.jks"}
+    topic: ${KAFKA_TOPIC:fraud-detection}
+    consumer-group: ${KAFKA_CONSUMER_GROUP:fraud-detection-group}
